@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Car Rental</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav justify-content-center w-100">
+                   <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="listings.html">Listings</a>
+                   </li>
+              </ul>
+              <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                      <a class="btn btn-outline-primary ms-2" href="login.html">Login</a>
+                   </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success ms-2" href="register.html">Register</a>
+                    </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container mt-5">
+       <h2>Welcome, User!</h2>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customer" type="button" role="tab" aria-controls="customer" aria-selected="true">Customer</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="admin-tab" data-bs-toggle="tab" data-bs-target="#admin" type="button" role="tab" aria-controls="admin" aria-selected="false">Admin</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <!-- Customer Dashboard -->
+            <div class="tab-pane fade show active" id="customer" role="tabpanel" aria-labelledby="customer-tab">
+                 <div class="mt-4">
+                   <h3>My Bookings</h3>
+                    <table class="table">
+                       <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Car</th>
+                                <th>Pickup Date</th>
+                                <th>Drop-off Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                       <tbody>
+                             <tr>
+                                <td>1</td>
+                                <td>Sedan 1</td>
+                                <td>10-10-2023</td>
+                                <td>10-15-2023</td>
+                                <td>Upcoming</td>
+                                <td><button class="btn btn-secondary">Cancel</button></td>
+                            </tr>
+                             <tr>
+                                <td>2</td>
+                                <td>SUV 1</td>
+                                <td>9-10-2023</td>
+                                <td>9-15-2023</td>
+                                <td>Completed</td>
+                                <td></td>
+                            </tr>
+                       </tbody>
+                    </table>
+                 </div>
+
+                 <div class="mt-4">
+                    <h3>Profile Settings</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" value="user" />
+                        </div>
+                        <div class="mb-3">
+                             <label class="form-label">Email</label>
+                            <input type="email" class="form-control" value="user@test.com" />
+                         </div>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </form>
+                 </div>
+            </div>
+
+           <!-- Admin Dashboard -->
+             <div class="tab-pane fade" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+                 <div class="mt-4">
+                      <h3>All Bookings</h3>
+                      <table class="table">
+                          <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Car</th>
+                                <th>Pickup Date</th>
+                                <th>Drop-off Date</th>
+                                <th>Customer</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                           <tbody>
+                             <tr>
+                                <td>1</td>
+                                <td>Sedan 1</td>
+                                <td>10-10-2023</td>
+                                <td>10-15-2023</td>
+                                <td>user1</td>
+                                <td>Pending</td>
+                                 <td><button class="btn btn-success">Approve</button>  <button class="btn btn-danger">Reject</button></td>
+                            </tr>
+                             <tr>
+                                <td>2</td>
+                                <td>SUV 1</td>
+                                <td>9-10-2023</td>
+                                <td>9-15-2023</td>
+                                <td>user2</td>
+                                <td>Approved</td>
+                                <td></td>
+                            </tr>
+                       </tbody>
+                      </table>
+                   </div>
+             </div>
+        </div>
+    </div>
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>© 2024 Car Rental Service. All rights reserved.</p>
+    </footer>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
