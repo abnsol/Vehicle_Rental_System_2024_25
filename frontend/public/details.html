@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Details</title>
+    <link href="./css/styles.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Car Rental</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav justify-content-center w-100">
+                   <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                   </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="listings.html">Listings</a>
+                   </li>
+              </ul>
+              <ul class="navbar-nav ms-auto">
+                   <li class="nav-item">
+                      <a class="btn btn-outline-primary ms-2" href="login.html">Login</a>
+                   </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success ms-2" href="register.html">Register</a>
+                    </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Image Slider Section -->
+            <div class="col-md-6">
+                <div class="image-slider">
+                    <div><img src="car1.jpg" class="img-fluid" alt="Car Image 1"></div>
+                    <div><img src="car2.jpg" class="img-fluid" alt="Car Image 2"></div>
+                    <div><img src="car3.jpg" class="img-fluid" alt="Car Image 3"></div>
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+            <!-- Car Details Section -->
+            <div class="col-md-6">
+                <h2>Car Name (Example Sedan 1)</h2>
+                <p><strong>Type:</strong> Sedan</p>
+                <p><strong>Features:</strong> Air Conditioning, Bluetooth, Navigation</p>
+                <p><strong>Specifications:</strong> 4-door, 5 passenger, Automatic</p>
+                <p><strong>Fuel Type:</strong> Gasoline</p>
+                <h4 class="mt-4">Pricing</h4>
+                <p><strong>Daily Rate:</strong> $80</p>
+                <p><strong>Additional charges:</strong> $5 insurance</p>
+                <p><strong>Rental Policies:</strong> 100 miles per day mileage limit, additional mileage is $0.3/mile</p>
+
+                <a href="booking.html" class="btn btn-primary mt-3">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>© 2024 Car Rental Service. All rights reserved.</p>
+    </footer>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
