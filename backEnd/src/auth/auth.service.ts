@@ -59,11 +59,13 @@ export class AuthService {
     if (!pwMatches) throw new ForbiddenException('Incorrect Credentials');
 
     // return token instead
-    return this.signToken(user.id, user.email);
+    const access_token = this.signToken(user.id, user.email);
+    delete user.password;
+    return { access_token: (await access_token).access_token, user: user };
   }
 
   async signToken(
-    userId: string,
+    userId: number,
     email: string,
   ): Promise<{ access_token: string }> {
     const payload = { sub: userId, email };

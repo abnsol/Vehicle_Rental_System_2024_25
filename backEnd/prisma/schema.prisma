@@ -14,7 +14,7 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid()) // Unique identifier for each user.
+  id        Int      @id @default(autoincrement()) // Unique identifier for each user.
   email     String   @unique // Ensures the email is unique.
   // phone     String   @unique // Ensures the phone number is unique.
   password  String // Hashed password stored securely.
@@ -22,7 +22,7 @@ model User {
   status    String   @default("ACTIVE") // "ACTIVE" or "INACTIVE" (for soft delete).
   createdAt DateTime @default(now()) // Automatically stores the record creation timestamp.
   updatedAt DateTime @updatedAt // Automatically updates on every update operation.
-  firstName String // Optional first name
+  firstName String // required first name
   lastName  String? // Optional last name
 
   // Relationships
@@ -31,7 +31,7 @@ model User {
 }
 
 model Vehicle {
-  id           String    @id @default(cuid()) // Unique identifier for each vehicle.
+  id           Int       @id @default(autoincrement()) // Unique identifier for each vehicle.
   model        String // Vehicle model name.
   brand        String // Vehicle brand.
   group        String // Category (SUV, Economy, etc.).
@@ -49,7 +49,7 @@ model Vehicle {
 }
 
 model Booking {
-  id        String   @id @default(cuid()) // Unique booking ID.
+  id        Int      @id @default(autoincrement()) // Unique booking ID.
   startDate DateTime // Start date of the booking.
   endDate   DateTime // End date of the booking.
   status    String   @default("PENDING") // Status: "PENDING", "CONFIRMED", or "COMPLETED".
@@ -57,8 +57,8 @@ model Booking {
   updatedAt DateTime @updatedAt // Automatically updates on update operations.
 
   // Foreign Keys
-  userId    String
-  vehicleId String
+  userId    Int
+  vehicleId Int
 
   // Relationships
   user    User    @relation(fields: [userId], references: [id])
@@ -66,14 +66,14 @@ model Booking {
 }
 
 model RentHistory {
-  id        String   @id @default(cuid()) // Unique ID for each rental history entry.
+  id        Int      @id @default(autoincrement()) // Unique ID for each rental history entry.
   startDate DateTime // Start date of the rental.
   endDate   DateTime // End date of the rental.
   createdAt DateTime @default(now()) // Timestamp for when the rental record was created.
 
   // Foreign Keys
-  userId    String
-  vehicleId String
+  userId    Int
+  vehicleId Int
 
   // Relationships
   user    User    @relation(fields: [userId], references: [id])

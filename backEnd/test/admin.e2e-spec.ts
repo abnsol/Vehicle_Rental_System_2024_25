@@ -4,6 +4,7 @@ import { Test } from '@nestjs/testing';
 import * as pactum from 'pactum'; // needs an api to request too
 import { SignInDTO } from '../src/auth/dto';
 import { PrismaService } from '../src/prisma/prisma.service';
+import { EditUserDto } from 'src/user/dto';
 
 describe('App e2e', () => {
   let app: INestApplication;
@@ -46,7 +47,8 @@ describe('App e2e', () => {
           .post('/auth/signin')
           .withBody(signInDto)
           .expectStatus(200)
-          .stores('adminAt', 'access_token');
+          .inspect()
+          .stores('userAt', 'access_token');
       });
     });
   });
@@ -59,9 +61,84 @@ describe('App e2e', () => {
           .spec()
           .get('/user/profile')
           .withHeaders({
-            Authorization: 'Bearer $S{adminAt}',
+            Authorization: 'Bearer $S{userAt}',
           })
-          .expectStatus(403);
+          .expectStatus(200);
+      });
+    });
+
+    describe('Get All Users', () => {
+      it('should get users', () => {
+        return pactum
+          .spec()
+          .get('/user/users')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .expectStatus(200)
+          .inspect()
+          .stores('userId', '[4].id');
+      });
+    });
+
+    describe('Get User by ID', () => {
+      it('should get user by id', async () => {
+        return pactum
+          .spec()
+          .get('/user/{id}')
+          .withPathParams('id', '$S{userId}')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .expectStatus(200)
+          .inspect();
+      });
+    });
+
+    describe('Edit Profile', () => {
+      const editUserDto: EditUserDto = {
+        firstName: 'Vlad',
+        lastName: 'Vlad',
+        email: 'vladmirputin2@gmail.com',
+      };
+      it('User Edits Profile', () => {
+        return pactum
+          .spec()
+          .patch('/user/')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .withBody(editUserDto)
+          .inspect()
+          .expectStatus(200);
+      });
+    });
+
+    describe('Promote User to Admin', () => {
+      it('should promote user to admin', () => {
+        return pactum
+          .spec()
+          .post('/user/promote')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .withBody({ id: '$S{userId}' })
+          .inspect()
+          .expectStatus(200);
+      });
+    });
+
+    describe('demote Admin to User', () => {
+      it('should demote user to admin', () => {
+        return pactum
+          .spec()
+          .post('/user/demote')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .withBody({ id: '$S{userId}' })
+          .inspect()
+          .expectStatus(200);
       });
     });
   });
