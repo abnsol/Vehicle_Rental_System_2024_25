@@ -1,12 +1,13 @@
+
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
+  "name": "vehicle-rental-system",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass": "sass --watch ./public/sass/styles.scss:./public/css/styles.min.css"
   },
   "devDependencies": {
     "typescript": "~5.6.2",
