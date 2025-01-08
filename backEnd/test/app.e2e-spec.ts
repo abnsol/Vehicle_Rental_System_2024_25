@@ -5,6 +5,7 @@ import * as pactum from 'pactum'; // needs an api to request too
 import { SignInDTO, SignUpDTO } from '../src/auth/dto';
 import { PrismaClient } from '@prisma/client';
 import { seed } from '../prisma/seed';
+import { EditUserDto } from 'src/user/dto';
 
 describe('App e2e', () => {
   let app: INestApplication;
@@ -82,7 +83,8 @@ describe('App e2e', () => {
           .spec()
           .post('/auth/signup')
           .withBody(signUpDto)
-          .expectStatus(200);
+          .expectStatus(200)
+          .inspect();
       });
     });
 
@@ -125,6 +127,7 @@ describe('App e2e', () => {
           .post('/auth/signin')
           .withBody(signInDto)
           .expectStatus(200)
+          .inspect()
           .stores('userAt', 'access_token');
       });
     });
@@ -141,6 +144,73 @@ describe('App e2e', () => {
             Authorization: 'Bearer $S{userAt}',
           })
           .expectStatus(200);
+      });
+    });
+
+    describe('Get All Users', () => {
+      it('should get users', () => {
+        return pactum
+          .spec()
+          .get('/user/users')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .expectStatus(403);
+      });
+    });
+
+    describe('Get User by ID', () => {
+      it('should get user by id', () => {
+        return pactum
+          .spec()
+          .get('/user/100')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .expectStatus(403);
+      });
+    });
+
+    describe('Edit Profile', () => {
+      const editUserDto: EditUserDto = {
+        firstName: 'Vlad',
+        lastName: 'Vlad',
+        email: 'vladmirputin@gmail.com',
+      };
+      it('User Edits Profile', () => {
+        return pactum
+          .spec()
+          .patch('/user/')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .withBody(editUserDto)
+          .inspect()
+          .expectStatus(200);
+      });
+    });
+
+    describe('Promote User to Admin', () => {
+      it('should not promote user to admin', () => {
+        return pactum
+          .spec()
+          .post('/user/promote')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .withBody({ id: 100 })
+          .expectStatus(403);
+      });
+    });
+
+    describe('Demote User to Admin', () => {
+      it('should not Demote user to admin', () => {
+        return pactum
+          .spec()
+          .post('/user/demote')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .withBody({ id: 100 })
+          .expectStatus(403);
       });
     });
   });
