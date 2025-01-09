@@ -1,105 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental Service</title>
-    <link href="./css/styles.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Service</title>
+  <link href="./css/styles.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <style>
+    section{
+      padding: 60px 0;
+    }
+  </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Car Rental</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav ">
-              <ul class="navbar-nav justify-content-center w-100">
-                   <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                   </li>
-                   <li class="nav-item">
-                    <a class="nav-link" href="listings.html">Listings</a>
-                   </li>
-              </ul>
-              <ul class="navbar-nav ms-auto">
-                   <li class="nav-item">
-                       <a class="btn btn-outline-primary ms-2" href="login.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-outline-success ms-2" href="register.html">Register</a>
-                    </li>
-              </ul>
-          </div>
-        </div>
-    </nav>
-      
-    <div class="container mt-5 text-center">
-        <h1 class="display-4">Welcome to Our Car Rental Service!</h1>
-        <p class="lead">Your reliable source for affordable car rentals.</p>
-        
-        <!-- Search Bar -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Location" aria-label="Location">
-                        <input type="date" class="form-control" aria-label="Date">
-                        <select class="form-select" aria-label="Car Type">
-                            <option selected>Car Type</option>
-                            <option>Sedan</option>
-                            <option>SUV</option>
-                            <option>Truck</option>
-                        </select>
-                        <button class="btn btn-primary" type="button">Search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <a class="btn btn-primary btn-lg mt-3" href="listings.html" role="button">Rent a Car</a>
-        <a class="btn btn-primary btn-lg mt-3" href="admin.html" role="button">Admin Panel</a>
-    </div>
 
-    <!-- Features Section -->
-    <div class="row mt-5 text-center">
-        <div class="col-md-4">
-            <h3>Affordable Rates</h3>
-            <p>Get the best deals on car rentals.</p>
-        </div>
-        <div class="col-md-4">
-            <h3>Wide Selection</h3>
-            <p>Choose from a variety of vehicles.</p>
-        </div>
-        <div class="col-md-4">
-            <h3>Easy Booking</h3>
-            <p>Quick and simple reservation process.</p>
-        </div>
-    </div>
+<body class="bg-bg">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-nbg ">
+    <div class="container-lg p-1">
+      <a class="navbar-brand mx-2" href="index.html">
+          <span class="fw-bold text-primary ">
+            <i class="bi bi-car-front-fill"> </i>Car Rental
+        </span>
+        </a>
 
-    <!-- About Us Section -->
-    <div class="container mt-5">
-        <h1>About Us</h1>
-        <p>Welcome to Car Rental Service, your premier destination for convenient and affordable car rentals. Our mission is to provide a hassle-free rental experience with a wide selection of vehicles to meet your needs.</p>
-        <p><strong>Our History:</strong></p>
-        <p>We started with a vision to make car rentals simple and accessible. Over the years, we've grown to serve a wide range of customers, from business travelers to families on vacation.</p>
-        <p><strong>Our Values:</strong></p>
-        <ul>
-            <li><strong>Customer Satisfaction:</strong> We prioritize your needs.</li>
-            <li><strong>Affordability:</strong> We offer competitive prices.</li>
-            <li><strong>Reliability:</strong> We ensure well-maintained and safe vehicles.</li>
+        <!-- toggle button for mobile nav --> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Nav" aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar links -->
+      <div class="collapse navbar-collapse justify-content-end align-center" id="Nav">
+        <ul class="navbar-nav justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutus">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="listings.html">Listings</a>
+          </li>
         </ul>
-        <p><strong>Team:</strong></p>
-        <p>We have a team of dedicated professionals committed to providing excellent service.</p>
-        <p>Thank you for choosing us for your car rental needs!</p>
+
+        <ul class="navbar-nav ms-auto mx-2">
+          <li class="nav-item ms-2">
+            <a class="btn btn-primary " href="login.html">Login</a>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="btn btn-bg " href="register.html">Register</a>
+          </li>
+        </ul>
+
+      </div>
     </div>
+  </nav>
+
+  <section id="intro">
+    <div class="container-lg mt-5 text-center">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <h1 class="display-4">Welcome to Our Car Rental Service!</h1>
+          <p class="lead text-muted my-2">Your reliable source for affordable car rentals.</p>
+          <a class="btn btn-primary" href="login.html">Login</a>
+          <a class="btn btn-outline-success" href="register.html">Register</a>
+        </div>
+
+        <div class="col-md-4 text-center d-none d-md-block">
+          <img src="../assets/rent_a_car.png" class="img-fluid rounded " alt="rent a car">
+        </div>
+      </div>
+    </div> <!--container end-->
+  </section>
+
+
+  <!-- Features Section -->
+  <section id="features" class="bg-shade mt-5">
+    <div class="container-lg">
+      <div class="text-center">
+        <h2>We provide you with: </h2>
+      </div>
+
+      <div class="row mt-4 align-items-center justify-content-center">
+          <div class="col-8 col-md-4">
+            <div class="card border-1">
+              <div class="card-body text-center py-4">
+                <h3 class="card-title">Affordable Rates</h3>
+                <p class="card-text">Get the best deals on car rentals.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-8 col-md-4">
+            <div class="card border-1">
+              <div class="card-body text-center py-5">
+                <h3 class="card-title">Wide Selection</h3>
+                <p class="card-text">Choose from a variety of vehicles.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-8 col-md-4">
+            <div class="card border-1">
+              <div class="card-body text-center py-4">
+                <h3 class="card-title">Easy Booking</h3>
+                <p class="card-text">Quick and simple reservation process.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- About Us Section -->
+<section id="aboutus" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="display-4  text-primary">About Us</h1>
+      <p class="text-muted lead ">Your premier destination for convenient and affordable car rentals</p>
+    </div>
+
+    <div class="row g-4 align-items-center justify-content-center">
+      <!-- About Us Introduction -->
+      <div class="col-lg-6">
+        <h2 class="text-secondary">Our Mission</h2>
+        <p>Welcome to Car Rental Service, your go-to place for a hassle-free car rental experience. With a wide selection of vehicles, we aim to meet all your travel needs at affordable prices.</p>
+        <h2 class="text-secondary mt-5">Our History</h2>
+        <p>Starting with a vision to make car rentals simple and accessible, we’ve grown over the years to serve a diverse range of customers—from business travelers to families on vacation.</p>
+      </div>
+
+      <!-- Our Values -->
+      <div class="col-lg-6">
+        <h2 class="text-secondary">Our Values</h2>
+        <ul>
+          <li>
+            <span class="lead">Customer Satisfaction:</span> We prioritize your needs.
+          </li>
+          <li>
+            <span class="lead">Affordability:</span> Competitive prices without compromise.
+          </li>
+          <li>
+            <span class="lead">Reliability:</span> Well-maintained and safe vehicles.
+          </li>
+        </ul>
+        <h2 class="text-secondary mt-5">Our Team</h2>
+        <p>Our dedicated team of professionals is committed to delivering top-notch customer service, ensuring that your journey with us is smooth and memorable.</p>
+      </div>
+    </div>
+</section>
 
     <!-- Footer -->
-    <footer class="bg-light text-center py-3 mt-5">
-        <p>© 2024 Car Rental Service. All rights reserved.</p>
+    <footer class="bg-fbg text-center p-3">
+      <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap Script -->
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../src/index.ts"></script>
 </body>
 </html>

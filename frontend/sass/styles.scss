@@ -1,0 +1,22 @@
+// Custom variables
+$primary: #262626;
+
+// Import Bootstrap's core functions and variables
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// Custom theme colors
+$custom-theme-color: (
+  "nbg": #999999,
+  "fbg": #4d4d4d,
+  "bg": #f2f2f2,
+  "shade":#E8E3DD
+);
+
+$theme-colors: map-merge($custom-theme-color, $theme-colors);
+
+// Import the rest of Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Import Bootstrap Icons
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";

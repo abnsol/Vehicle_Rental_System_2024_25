@@ -7,32 +7,44 @@
     <link href="./css/styles.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Car Rental</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav justify-content-center w-100">
-                   <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                   </li>
-                   <li class="nav-item">
-                    <a class="nav-link" href="listings.html">Listings</a>
-                   </li>
-              </ul>
-              <ul class="navbar-nav ms-auto">
-                   <li class="nav-item">
-                      <a class="btn btn-outline-primary ms-2" href="login.html">Login</a>
-                   </li>
-                    <li class="nav-item">
-                        <a class="btn btn-outline-success ms-2" href="register.html">Register</a>
-                    </li>
-              </ul>
-          </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-nbg">
+    <div class="container-lg p-1">
+      <a class="navbar-brand mx-2" href="index.html">
+        <span>
+          <i class="bi bi-car-front-fill"> </i> Car Rental
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav justify-content-center w-100">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutus">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listings.html">Listings</a>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav ms-auto align-items-center justify-content-center">
+            <li class="nav-item ms-2">
+              <a href="#" class="btn btn-link" id="user-profile">
+                <i class="bi bi-person-circle" style="font-size: 2.3rem;"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-danger ms-2" id="logout-button">Logout</button>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
     <div class="container mt-5">
         <div class="row">
             <!-- Image Slider Section -->
@@ -45,24 +57,16 @@
                 </div>
             </div>
             <!-- Car Details Section -->
-            <div class="col-md-6">
-                <h2>Car Name (Example Sedan 1)</h2>
-                <p><strong>Type:</strong> Sedan</p>
-                <p><strong>Features:</strong> Air Conditioning, Bluetooth, Navigation</p>
-                <p><strong>Specifications:</strong> 4-door, 5 passenger, Automatic</p>
-                <p><strong>Fuel Type:</strong> Gasoline</p>
-                <h4 class="mt-4">Pricing</h4>
-                <p><strong>Daily Rate:</strong> $80</p>
-                <p><strong>Additional charges:</strong> $5 insurance</p>
-                <p><strong>Rental Policies:</strong> 100 miles per day mileage limit, additional mileage is $0.3/mile</p>
+            <div class="col-md-6" id="vehicle-details">
 
-                <a href="booking.html" class="btn btn-primary mt-3">Book Now</a>
             </div>
         </div>
     </div>
-    <footer class="bg-light text-center py-3 mt-5">
-        <p>© 2024 Car Rental Service. All rights reserved.</p>
+    <footer class="bg-fbg text-center py-3 mt-5 fixed-bottom class="mb-2">
+        <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
     </footer>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../src/vehicles/details.ts"></script>
+    <script type="module" src="../src/index.ts"></script>
 </body>
 </html>

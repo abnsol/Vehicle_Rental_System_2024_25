@@ -7,33 +7,45 @@
     <link href="./css/styles.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Car Rental</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-nbg">
+        <div class="container-lg p-1">
+          <a class="navbar-brand mx-2" href="index.html">
+            <span>
+              <i class="bi bi-car-front-fill"> </i> Car Rental
+            </span>
+          </a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav justify-content-center w-100">
-                   <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                   </li>
-                   <li class="nav-item">
-                    <a class="nav-link" href="listings.html">Listings</a>
-                   </li>
-
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#aboutus">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listings.html">Listings</a>
+                </li>
               </ul>
-              <ul class="navbar-nav ms-auto">
-                   <li class="nav-item">
-                      <a class="btn btn-outline-primary ms-2" href="login.html">Login</a>
-                   </li>
-                    <li class="nav-item">
-                        <a class="btn btn-outline-success ms-2" href="register.html">Register</a>
-                    </li>
+              
+              <ul class="navbar-nav ms-auto align-items-center justify-content-center">
+                <li class="nav-item ms-2">
+                  <a href="#" class="btn btn-link" id="user-profile">
+                    <i class="bi bi-person-circle" style="font-size: 2.3rem;"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-danger ms-2" id="logout-button">Logout</button>
+                </li>
               </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+
     <div class="container mt-5">
         <h2>Confirm Your Booking</h2>
         <div class="row">
@@ -42,37 +54,27 @@
                 <form>
                     <div class="mb-3">
                         <label class="form-label">Pickup Date</label>
-                        <input type="date" class="form-control">
+                        <input type="date" class="form-control" id="pickUpDate">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Drop-off Date</label>
-                        <input type="date" class="form-control">
+                        <input type="date" class="form-control" id="dropOffDate">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Pickup Location</label>
-                        <input type="text" class="form-control" placeholder="Enter pickup location">
-                    </div>
-                      <div class="mb-3">
-                        <label class="form-label">Drop-off Location</label>
-                        <input type="text" class="form-control" placeholder="Enter Drop-off location">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                    <button type="submit" class="btn btn-primary" id="book-button">Confirm Booking</button>
                 </form>
             </div>
-             <div class="col-md-6">
-                 <h4>Rental Summary</h4>
-                 <p><strong>Car:</strong> Example Sedan 1</p>
-                <p><strong>Daily Rate:</strong> $80</p>
-                <p><strong>Insurance:</strong> $5</p>
-                 <p><strong>Pickup Date:</strong> 10-20-2023</p>
-                 <p><strong>Drop-off Date:</strong> 10-25-2023</p>
-                <p><strong>Total:</strong> $425</p>
+             <div class="col-md-6" id="rental-summary">
+                 
             </div>
         </div>
     </div>
-     <footer class="bg-light text-center py-3 mt-5">
-        <p>© 2024 Car Rental Service. All rights reserved.</p>
+
+    <footer class="bg-fbg text-center p-3 fixed-bottom">
+        <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
     </footer>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../src/booking/booking.ts"></script>
+    <script type="module" src="../src/index.ts"></script>
 </body>
 </html>
