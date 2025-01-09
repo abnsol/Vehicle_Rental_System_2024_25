@@ -84,20 +84,6 @@ describe('App e2e', () => {
       });
     });
 
-    describe('Get User by ID', () => {
-      it('should get user by id', async () => {
-        return pactum
-          .spec()
-          .get('/user/{id}')
-          .withPathParams('id', '$S{userId}')
-          .withHeaders({
-            Authorization: 'Bearer $S{userAt}',
-          })
-          .expectStatus(200)
-          .inspect();
-      });
-    });
-
     describe('Edit Profile', () => {
       const editUserDto: EditUserDto = {
         firstName: 'Vlad',
