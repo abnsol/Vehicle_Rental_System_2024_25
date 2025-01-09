@@ -10,14 +10,9 @@ Promise<any> => {
         if (contentType && contentType.includes('application/json')){
             return await response.json();
         }
-<<<<<<< HEAD
         return response
-=======
-        return response.json()
->>>>>>> e0a0371ce0b1bd80cc9de55f5d74efe29aef12e7
     }catch(error){
         console.error('Fetch error:', error);
         throw error;
     }
 };
-
