@@ -5,7 +5,7 @@ import * as argon from 'argon2';
 // import { ConfigService } from '@nestjs/config';
 // import { Role } from 'src/auth/roles/roles.enum';
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 // const config = new ConfigService();
 // const prismaService = new PrismaService(config);
 
@@ -58,13 +58,81 @@ export async function seed(prisma: PrismaClient) {
   }
 
   console.log('5 Users created!');
+
+  const vehicles = [
+    {
+      model: '911',
+      brand: 'Porsche',
+      group: 'Coupe',
+      price: 150000,
+      color: 'Red',
+      madeIn: 'Germany',
+      manufactured: new Date('2001-12-20').toISOString(),
+      seatingCapacity: 2,
+      images: 'assets/images/vehicles/911-1.jpg',
+    },
+    {
+      model: 'Civic',
+      brand: 'Honda',
+      group: 'Sedan',
+      price: 20000,
+      color: 'Blue',
+      madeIn: 'Japan',
+      manufactured: new Date('2018-05-15').toISOString(),
+      seatingCapacity: 5,
+      images: 'assets/images/vehicles/civic-1.jpg',
+    },
+    {
+      model: 'Model S',
+      brand: 'Tesla',
+      group: 'Sedan',
+      price: 90000,
+      color: 'White',
+      madeIn: 'USA',
+      manufactured: new Date('2020-09-25').toISOString(),
+      seatingCapacity: 5,
+      images: 'assets/images/vehicles/model-s-1.jpg',
+    },
+    {
+      model: 'Mustang',
+      brand: 'Ford',
+      group: 'Coupe',
+      price: 55000,
+      color: 'Black',
+      madeIn: 'USA',
+      manufactured: new Date('2015-03-10').toISOString(),
+      seatingCapacity: 4,
+      images: 'assets/images/vehicles/mustang-1.jpg',
+      available: false,
+    },
+    {
+      model: 'Corolla',
+      brand: 'Toyota',
+      group: 'Hatchback',
+      price: 18000,
+      color: 'Gray',
+      madeIn: 'Japan',
+      manufactured: new Date('2019-07-30').toISOString(),
+      seatingCapacity: 5,
+      images: 'assets/images/vehicles/corolla-1.jpg',
+      available: false,
+    },
+  ];
+
+  vehicles.forEach(async (vehicle) => {
+    await prisma.vehicle.create({
+      data: vehicle,
+    });
+  });
+
+  console.log('5 Vehicles created!');
 }
 
-seed(prisma)
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+// seed(prisma)
+//   .catch((e) => {
+//     console.error(e);
+//     process.exit(1);
+//   })
+//   .finally(async () => {
+//     await prisma.$disconnect();
+//   });

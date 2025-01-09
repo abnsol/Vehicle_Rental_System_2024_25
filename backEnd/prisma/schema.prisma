@@ -31,30 +31,35 @@ model User {
 }
 
 model Vehicle {
-  id           Int       @id @default(autoincrement()) // Unique identifier for each vehicle.
-  model        String // Vehicle model name.
-  brand        String // Vehicle brand.
-  group        String // Category (SUV, Economy, etc.).
-  available    Boolean   @default(true) // Indicates if the vehicle is available for booking.
-  price        Float // Rental price per day.
-  madeIn       String // Country of manufacture.
-  manufactured DateTime // Date when the vehicle was manufactured.
-  lastCheck    DateTime? // Last maintenance check date (optional).
-  createdAt    DateTime  @default(now()) // Creation timestamp.
-  updatedAt    DateTime  @updatedAt // Update timestamp.
+  id              Int       @id @default(autoincrement()) // Unique identifier for each vehicle.
+  model           String // Vehicle model name.
+  brand           String // Vehicle brand.
+  group           String // Category (SUV, Economy, etc.).
+  available       Boolean   @default(true) // Indicates if the vehicle is available for booking.
+  price           Float // Rental price per day.
+  madeIn          String? // Country of manufacture.
+  status          String    @default("ACTIVE") // "BOOKED","ARCHIVED/DELETED", "DAMAGED"
+  manufactured    DateTime // Date when the vehicle was manufactured.
+  color           String? // Vehicle color.
+  seatingCapacity Int? // Number of seats in the vehicle.
+  images          String? // List of image URLs for the vehicle.
+  lastCheck       DateTime? // Last maintenance check date (optional).
+  createdAt       DateTime  @default(now()) // Creation timestamp.
+  updatedAt       DateTime  @updatedAt // Update timestam
 
   // Relationships
-  bookings    Booking[] // A vehicle can have multiple bookings.
-  rentHistory RentHistory[] // A vehicle can have multiple completed rentals.
+  bookings         Booking[]      // A vehicle can have multiple bookings.
+  rentHistory      RentHistory[]  // A vehicle can have multiple completed rentals.
 }
 
 model Booking {
-  id        Int      @id @default(autoincrement()) // Unique booking ID.
-  startDate DateTime // Start date of the booking.
-  endDate   DateTime // End date of the booking.
-  status    String   @default("PENDING") // Status: "PENDING", "CONFIRMED", or "COMPLETED".
-  createdAt DateTime @default(now()) // Booking creation timestamp.
-  updatedAt DateTime @updatedAt // Automatically updates on update operations.
+  id         Int      @id @default(autoincrement()) // Unique booking ID.
+  startDate  DateTime // Start date of the booking.
+  endDate    DateTime // End date of the booking.
+  status     String   @default("PENDING") // Status: "PENDING", "CONFIRMED", or "COMPLETED".
+  totalPrice Float // Total price for the booking.
+  createdAt  DateTime @default(now()) // Booking creation timestamp.
+  updatedAt  DateTime @updatedAt // Automatically updates on update operations.
 
   // Foreign Keys
   userId    Int
