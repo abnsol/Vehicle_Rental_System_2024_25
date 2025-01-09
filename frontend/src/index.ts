@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { logout } from './auth/logout';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 })
+=======
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
+import { logout } from './auth/logout';
+>>>>>>> e0a0371ce0b1bd80cc9de55f5d74efe29aef12e7
 
 document.getElementById("logout-button")?.addEventListener("click", () => {
     logout();

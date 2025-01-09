@@ -20,7 +20,12 @@ document.addEventListener('DOMContentLoaded',() =>{
                 email: emailInput.value,
                 password: passwordInput.value,
                 firstName: nameInput.value
+<<<<<<< HEAD
               };
+=======
+          };
+          console.log(userdata)
+>>>>>>> e0a0371ce0b1bd80cc9de55f5d74efe29aef12e7
               try{
                 const response = await registerApi(userdata);
                 if (response){
@@ -29,6 +34,10 @@ document.addEventListener('DOMContentLoaded',() =>{
                     alert('register failed')
                     console.error('register failed')
                 }
+<<<<<<< HEAD
+=======
+                
+>>>>>>> e0a0371ce0b1bd80cc9de55f5d74efe29aef12e7
               }catch(error){
                 console.error('register failed!', error);
                 alert('register failed:' + error);
