@@ -1,4 +1,4 @@
-import { IsNumber, IsString, IsEnum, Min, IsDateString } from 'class-validator';
+import { IsNumber, IsString, IsEnum, Min, IsDateString, IsOptional } from 'class-validator';
 
 export class CreateVehicleDTO {
   @IsString()
@@ -16,18 +16,22 @@ export class CreateVehicleDTO {
   price: number;
 
   @IsString()
-  color: string;
+  @IsOptional()
+  color?: string;
 
   @IsString()
-  madeIn: string;
+  @IsOptional()
+  madeIn?: string;
 
   @IsDateString({}, { message: 'Manufactured must be a valid ISO date string' })
-  manufactured: string;
+  @IsOptional()
+  manufactured?: string;
 
   @IsNumber()
-  @Min(1, { message: 'Seating capacity must be at least 1' })
-  seatingCapacity: number;
+  @IsOptional()
+  seatingCapacity?: number;
 
-  @IsString({ each: true })
-  images: string;
+  @IsString()
+  @IsOptional()
+  images?: string;
 }

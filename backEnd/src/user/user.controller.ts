@@ -38,7 +38,7 @@ export class UserController {
   @Get(':id')
   @UseGuards(RoleGuard)
   @Roles('ADMIN')
-  getUserById(@Param('id', ParseIntPipe) id: number) {
+  getUserById(@Param('id') id: number) {
     return this.userService.getUserById(id);
   }
 
@@ -51,7 +51,7 @@ export class UserController {
   @UseGuards(RoleGuard)
   @Roles('ADMIN')
   @HttpCode(HttpStatus.OK)
-  promoteUserToAdmin(@Body('id', ParseIntPipe) id: number) {
+  promoteUserToAdmin(@Body('userId') id: number) {
     return this.userService.promoteUserToAdmin(id);
   }
 
@@ -59,7 +59,7 @@ export class UserController {
   @UseGuards(RoleGuard)
   @Roles('ADMIN')
   @HttpCode(HttpStatus.OK)
-  demoteManagerToUser(@Body('id') id: number) {
+  demoteManagerToUser(@Body('userId') id: number) {
     return this.userService.demoteAdminToUser(id);
   }
 }
