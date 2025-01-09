@@ -5,7 +5,7 @@ import * as argon from 'argon2';
 // import { ConfigService } from '@nestjs/config';
 // import { Role } from 'src/auth/roles/roles.enum';
 
-// const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 // const config = new ConfigService();
 // const prismaService = new PrismaService(config);
 
@@ -128,11 +128,11 @@ export async function seed(prisma: PrismaClient) {
   console.log('5 Vehicles created!');
 }
 
-// seed(prisma)
-//   .catch((e) => {
-//     console.error(e);
-//     process.exit(1);
-//   })
-//   .finally(async () => {
-//     await prisma.$disconnect();
-//   });
+seed(prisma)
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
