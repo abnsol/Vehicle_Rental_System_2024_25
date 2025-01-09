@@ -39,7 +39,7 @@ model Vehicle {
   price           Float // Rental price per day.
   madeIn          String? // Country of manufacture.
   status          String    @default("ACTIVE") // "BOOKED","ARCHIVED/DELETED", "DAMAGED"
-  manufactured    DateTime // Date when the vehicle was manufactured.
+  manufactured    DateTime? // Date when the vehicle was manufactured.
   color           String? // Vehicle color.
   seatingCapacity Int? // Number of seats in the vehicle.
   images          String? // List of image URLs for the vehicle.
