@@ -1,4 +1,4 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class EditVehicleDTO {
   @IsString()
@@ -36,4 +36,8 @@ export class EditVehicleDTO {
   @IsString({ each: true })
   @IsOptional()
   images?: string;
+
+  @IsBoolean()
+  @IsOptional()
+  available? :boolean;
 }

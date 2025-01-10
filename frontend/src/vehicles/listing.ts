@@ -21,7 +21,6 @@ async function loadVehicles() {
                 vehicleCard.className = 'col-md-4 col-10 mb-4'; // Assign appropriate classes
                 vehicleCard.innerHTML = `
                     <div class="card h-100">
-                        <img src="../assets/Img-filler-1.jpg" class="card-img-top border" alt="${vehicle.brand}">
                         <div class="card-body">
                             <h5 class="card-title">${vehicle.brand}</h5>
                             <p class="card-text">Type: ${vehicle.group}, Features: ${vehicle.available}</p>

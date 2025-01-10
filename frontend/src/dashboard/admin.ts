@@ -310,8 +310,8 @@ async function handleAdminAction(event: Event) {
         vehicle.brand;
       (document.getElementById("editVehicleGroup") as HTMLInputElement).value =
         vehicle.group;
-      (document.getElementById("editVehicleAvailable") as HTMLInputElement).value =
-        String(vehicle.available);
+      // (document.getElementById("editVehicleAvailable") as HTMLInputElement).value =
+      //   String(vehicle.available);
       (document.getElementById("editVehiclePrice") as HTMLInputElement).value =
         String(vehicle.price);
 
@@ -327,7 +327,7 @@ async function handleAdminAction(event: Event) {
             id: Number((document.getElementById("editVehicleId") as HTMLInputElement).value),
             brand: (document.getElementById("editVehicleBrand") as HTMLInputElement).value,
             group: (document.getElementById("editVehicleGroup") as HTMLInputElement).value,
-            available: Boolean((document.getElementById("editVehicleAvailable") as HTMLInputElement).value),
+            // available: Boolean((document.getElementById("editVehicleAvailable") as HTMLInputElement).value),
             price: Number((document.getElementById("editVehiclePrice") as HTMLInputElement).value),
         };
         try {

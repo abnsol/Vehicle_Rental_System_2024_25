@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-nbg">
+  <div class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-nbg">
         <div class="container-lg p-1">
           <a class="navbar-brand mx-2" href="index.html">
             <span>
@@ -41,8 +42,9 @@
             </div>
           </div>
         </nav>
-        
-    <div class="container mt-5">
+        <main class="flex-grow-1 p-3">
+             <section>
+      <div class="container mt-5">
         <h2>Admin Panel</h2>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
              <li class="nav-item" role="presentation">
@@ -152,10 +154,10 @@
                               <option value="Coupe">Coupe</option>
                             </select>
                           </div>
-                          <div class="mb-3">
+                          <!-- <div class="mb-3">
                             <label for="editVehicleAvailable" class="form-label">Availability</label>
                             <input type="text" class="form-control" id="editVehicleAvailable"/>
-                          </div>
+                          </div> -->
                           <div class="mb-3">
                             <label for="editVehiclePrice" class="form-label">Price</label>
                             <input type="number" class="form-control" id="editVehiclePrice"/>
@@ -226,10 +228,14 @@
              
         </div>
     </div>
-
-    <footer class="bg-fbg text-center p-3 fixed-bottom">
+    </section>  
+        </main>
+ 
+    <footer class="bg-fbg text-center p-3">
         <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
     </footer>
+  </div>
+
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="../src/booking/booking.ts"></script>
     <script type="module" src="../src/dashboard/admin.ts"></script>
