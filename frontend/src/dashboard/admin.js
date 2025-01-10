@@ -259,8 +259,8 @@ async function handleAdminAction(event) {
             vehicle.brand;
         document.getElementById("editVehicleGroup").value =
             vehicle.group;
-        document.getElementById("editVehicleAvailable").value =
-            String(vehicle.available);
+        // (document.getElementById("editVehicleAvailable") as HTMLInputElement).value =
+        //   String(vehicle.available);
         document.getElementById("editVehiclePrice").value =
             String(vehicle.price);
         const editModal = new Modal(document.getElementById("editVehicleModal"));
@@ -272,7 +272,7 @@ async function handleAdminAction(event) {
                 id: Number(document.getElementById("editVehicleId").value),
                 brand: document.getElementById("editVehicleBrand").value,
                 group: document.getElementById("editVehicleGroup").value,
-                available: Boolean(document.getElementById("editVehicleAvailable").value),
+                // available: Boolean((document.getElementById("editVehicleAvailable") as HTMLInputElement).value),
                 price: Number(document.getElementById("editVehiclePrice").value),
             };
             try {
