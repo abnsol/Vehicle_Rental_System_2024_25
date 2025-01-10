@@ -61,7 +61,7 @@ function handleProfileUpdate() {
         e.preventDefault();
         const nameInput = (form.querySelector('#editProfileName') as HTMLInputElement).value;
         const emailInput = (form.querySelector('#editProfileEmail') as HTMLInputElement).value;
-        await updateUser({ name: nameInput, email: emailInput });
+        await updateUser({ firstName: nameInput, email: emailInput });
         alert("Profile updated!");
         const modal = document.querySelector("#editProfileModal") as HTMLElement;
         const bootstrapModal = Modal.getInstance(modal);
