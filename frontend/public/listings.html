@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vehicle Listings</title>
-  <link href="./css/styles.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
 <body class="bg-bg">
   <!-- navbar -->
   <nav class="navbar navbar-expand-md navbar-light bg-nbg ">
     <div class="container-md p-1">
-      <a class="navbar-brand mx-2" href="index.html">
-          <span class="fw-bold text-primary ">
-            <i class="bi bi-car-front-fill"> </i> Car Rental
+      <a class="navbar-brand mx-2" href="../index.html">
+        <span class="fw-bold text-primary ">
+          <i class="bi bi-car-front-fill"> </i> Car Rental
         </span>
-        </a>
+      </a>
 
-        <!-- toggle button for mobile nav --> 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Nav" aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <!-- toggle button for mobile nav -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Nav" aria-controls="Nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- navbar links -->
+      <!-- navbar links -->
       <div class="collapse navbar-collapse justify-content-end align-center" id="Nav">
         <ul class="navbar-nav justify-content-center w-100">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="../index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html#aboutus">About Us</a>
+            <a class="nav-link" href="../index.html#aboutus">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="listings.html">Listings</a>
+            <a class="nav-link" href="./listings.html">Listings</a>
           </li>
         </ul>
 
@@ -50,73 +52,76 @@
     </div>
   </nav>
 
-<section>
-  <div class="container mt-5">
+  <section>
+    <div class="container mt-5">
       <h2>Available Vehicles</h2>
       <div class="row">
-          <!-- Filters Section -->
-          <div class="col-md-3">
-              <h4>Filters</h4>
-              <form>
-                  <div class="mb-3">
-                      <label for="carType" class="form-label">Car Type</label>
-                      <select id="carType" class="form-select" aria-label="Filter by car type">
-                          <option selected>Any</option>
-                          <option>Sedan</option>
-                          <option>SUV</option>
-                          <option>Truck</option>
-                          <option>Sports Car</option>
-                      </select>
-                  </div>
-                  <div class="mb-3">
-                      <label for="priceRange" class="form-label">Price Range</label>
-                      <input id="priceRange" type="range" class="form-range" min="50" max="200" value="100" oninput="this.nextElementSibling.value = this.value">
-                      <output>100</output>
-                  </div>
-                  <div class="mb-3">
-                      <label for="seatingCapacity" class="form-label">Seating Capacity</label>
-                      <select id="seatingCapacity" class="form-select" aria-label="Filter by seating capacity">
-                          <option selected>Any</option>
-                          <option>2</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>7</option>
-                      </select>
-                  </div>
-                  <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
-              </form>
-          </div>
-          
-          <!-- Vehicle Cards Section -->
-          <div class="col-md-9 mt-4 mb-5 pb-5 pt-5 bg-light p-2">
-            <div class="row justify-content-center ">
-              <div class="d-flex container col-11 justify-content-between">
-                <h4>Available Cars</h4>
-                <div id="sort">
-                  <select class="form-select w-auto" aria-label="Sort by">
-                    <option selected>Sort By</option>
-                    <option>Price Ascending</option>
-                    <option>Price Descending</option>
-                    <option>Popularity</option>
-                  </div>
-                </select>
-              </div>
+        <!-- Filters Section -->
+        <div class="col-md-3">
+          <h4>Filters</h4>
+          <form>
+            <div class="mb-3">
+              <label for="carType" class="form-label">Car Type</label>
+              <select id="carType" class="form-select" aria-label="Filter by car type">
+                <option selected>Any</option>
+                <option>Sedan</option>
+                <option>SUV</option>
+                <option>Truck</option>
+                <option>Sports Car</option>
+              </select>
             </div>
-            
-            <div class="row mt-3 justify-content-center" id="row">
-  
-             </div>
+            <div class="mb-3">
+              <label for="priceRange" class="form-label">Price Range</label>
+              <input id="priceRange" type="range" class="form-range" min="50" max="200" value="100"
+                oninput="this.nextElementSibling.value = this.value">
+              <output>100</output>
+            </div>
+            <div class="mb-3">
+              <label for="seatingCapacity" class="form-label">Seating Capacity</label>
+              <select id="seatingCapacity" class="form-select" aria-label="Filter by seating capacity">
+                <option selected>Any</option>
+                <option>2</option>
+                <option>4</option>
+                <option>5</option>
+                <option>7</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+          </form>
+        </div>
+
+        <!-- Vehicle Cards Section -->
+        <div class="col-md-9 mt-4 mb-5 pb-5 pt-5 bg-light p-2">
+          <div class="row justify-content-center ">
+            <div class="d-flex container col-11 justify-content-between">
+              <h4>Available Cars</h4>
+              <div id="sort">
+                <select class="form-select w-auto" aria-label="Sort by">
+                  <option selected>Sort By</option>
+                  <option>Price Ascending</option>
+                  <option>Price Descending</option>
+                  <option>Popularity</option>
+              </div>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mt-3 justify-content-center" id="row">
+
+          </div>
         </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-fbg text-center p-3 fixed-bottom" >
-      <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-fbg text-center p-3 fixed-bottom">
+    <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
   </footer>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="../src/vehicles/listing.ts"></script>
-    <script type="module" src="../src/index.ts"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../src/scripts/js/vehicles/details.js"></script>
+  <script type="module" src="../src/scripts/js/index.js"></script>
+  <script type="module" src="../src/scripts/js/vehicles/listing.js"></script>
 </body>
+
 </html>

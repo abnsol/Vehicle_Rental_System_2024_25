@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch ./scss/styles.scss:./styles/styles.css"
   },
@@ -21,8 +18,7 @@
     "@types/node": "^22.10.5",
     "jwt-decode": "^4.0.0",
     "sass": "^1.83.1",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.7"
+    "typescript": "^5.7.2"
   },
   "keywords": [],
   "description": ""

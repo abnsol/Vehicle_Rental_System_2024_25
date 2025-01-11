@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking</title>
-    <link href="./css/styles.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/styles.min.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-nbg">
-        <div class="container-lg p-1">
-          <a class="navbar-brand mx-2" href="index.html">
-            <span>
-              <i class="bi bi-car-front-fill"> </i> Car Rental
-            </span>
-          </a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-nbg">
+    <div class="container-lg p-1">
+      <a class="navbar-brand mx-2" href="../index.html">
+        <span>
+          <i class="bi bi-car-front-fill"> </i> Car Rental
+        </span>
+      </a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav justify-content-center w-100">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#aboutus">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="listings.html">Listings</a>
-                </li>
-              </ul>
-              
-              <ul class="navbar-nav ms-auto align-items-center justify-content-center">
-                <li class="nav-item ms-2">
-                  <a href="#" class="btn btn-link" id="user-profile">
-                    <i class="bi bi-person-circle" style="font-size: 2.3rem;"></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <button class="btn btn-outline-danger ms-2" id="logout-button">Logout</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="container mt-5">
-        <h2>Confirm Your Booking</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h4>Enter Booking Details</h4>
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Pickup Date</label>
-                        <input type="date" class="form-control" id="pickUpDate">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Drop-off Date</label>
-                        <input type="date" class="form-control" id="dropOffDate">
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="book-button">Confirm Booking</button>
-                </form>
-            </div>
-             <div class="col-md-6" id="rental-summary">
-                 
-            </div>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#aboutus">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./listings.html">Listings</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto align-items-center justify-content-center">
+          <li class="nav-item ms-2">
+            <a href="#" class="btn btn-link" id="user-profile">
+              <i class="bi bi-person-circle" style="font-size: 2.3rem;"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-danger ms-2" id="logout-button">Logout</button>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <footer class="bg-fbg text-center p-3 fixed-bottom">
-        <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
-    </footer>
+  <div class="container mt-5">
+    <h2>Confirm Your Booking</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Enter Booking Details</h4>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Pickup Date</label>
+            <input type="date" class="form-control" id="pickUpDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Drop-off Date</label>
+            <input type="date" class="form-control" id="dropOffDate">
+          </div>
+          <button type="submit" class="btn btn-primary" id="book-button">Confirm Booking</button>
+        </form>
+      </div>
+      <div class="col-md-6" id="rental-summary">
 
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="../src/booking/booking.ts"></script>
-    <script type="module" src="../src/index.ts"></script>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-fbg text-center p-3 fixed-bottom">
+    <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
+  </footer>
+
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../src/scripts/js/booking/booking.js"></script>
+  <script type="module" src="../src/scripts/js/index.js"></script>
 </body>
+
 </html>
