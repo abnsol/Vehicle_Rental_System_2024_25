@@ -1,126 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <link href="./css/styles.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/styles.min.css">
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-nbg">
     <div class="container-lg p-1">
-      <a class="navbar-brand mx-2" href="index.html">
+      <a class="navbar-brand mx-2" href="../index.html">
         <span>
           <i class="bi bi-car-front-fill"> </i> Car Rental
         </span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav justify-content-center w-100">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#aboutus">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="listings.html">Listings</a>
-            </li>
-          </ul>
-          
-          <ul class="navbar-nav ms-auto align-items-center justify-content-center">
-            <li class="nav-item">
-              <button class="btn btn-outline-danger ms-2" id="logout-button">Logout</button>
-            </li>
-          </ul>
-        </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#aboutus">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./listings.html">Listings</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto align-items-center justify-content-center">
+          <li class="nav-item">
+            <button class="btn btn-outline-danger ms-2" id="logout-button">Logout</button>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
 
   <div class="container mt-5">
-       <h2>Welcome, User!</h2>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customer" type="button" role="tab" aria-controls="customer" aria-selected="true">Manage Booking</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="admin-tab" data-bs-toggle="tab" data-bs-target="#admin" type="button" role="tab" aria-controls="admin" aria-selected="false">Customer Profile</button>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <!-- Customer Dashboard -->
-            <div class="tab-pane fade show active" id="customer" role="tabpanel" aria-labelledby="customer-tab">
-                 <div class="mt-4">
-                   <h3>My Bookings</h3>
-                    <table class="table">
-                       <thead>
-                            <tr>
-                                <th>Booking ID</th>
-                                <th>Car</th>
-                                <th>Pickup Date</th>
-                                <th>Drop-off Date</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                       <tbody>
-                            
-                       </tbody>
-                    </table>
-                 </div>
+    <h2>Welcome, User!</h2>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customer" type="button"
+          role="tab" aria-controls="customer" aria-selected="true">Manage Booking</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="admin-tab" data-bs-toggle="tab" data-bs-target="#admin" type="button" role="tab"
+          aria-controls="admin" aria-selected="false">Customer Profile</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!-- Customer Dashboard -->
+      <div class="tab-pane fade show active" id="customer" role="tabpanel" aria-labelledby="customer-tab">
+        <div class="mt-4">
+          <h3>My Bookings</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Car</th>
+                <th>Pickup Date</th>
+                <th>Drop-off Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
 
-            </div>
-
-           <!-- User Dashboard -->
-             <div class="tab-pane fade" id="admin" role="tabpanel" aria-labelledby="admin-tab">
-                 <div class="mt-4">
-                  <h3>Profile Settings</h3>
-                  <p id="profile">
-
-
-                  </p>
-                  <button type="btn btn-primary" class="btn btn-primary" id="updateProfilebtn">Update Profile</button>
-                  <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <form id="editProfileForm" class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title">Edit Profile</h5>
-                          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <input type="hidden" id="editProfileId" />
-                          <input type="hidden" id="editProfileRole"/>
-                          <div class="mb-3">
-                            <label for="editProfileName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="editProfileName"/>
-                          </div>  
-                          <div class="mb-3">
-                            <label for="editProfileEmail" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="editProfileEmail"/>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <button type="submit" class="btn btn-primary">Save Changes</button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-             </div>
+            </tbody>
+          </table>
         </div>
+
+      </div>
+
+      <!-- User Dashboard -->
+      <div class="tab-pane fade" id="admin" role="tabpanel" aria-labelledby="admin-tab">
+        <div class="mt-4">
+          <h3>Profile Settings</h3>
+          <p id="profile">
+
+
+          </p>
+          <button type="btn btn-primary" class="btn btn-primary" id="updateProfilebtn">Update Profile</button>
+          <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <form id="editProfileForm" class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Edit Profile</h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <input type="hidden" id="editProfileId" />
+                  <input type="hidden" id="editProfileRole" />
+                  <div class="mb-3">
+                    <label for="editProfileName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="editProfileName" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="editProfileEmail" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="editProfileEmail" />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <footer class="bg-fbg text-center py-3 mt-5 fixed-bottom">
-        <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
+      <p class="text-light">© 2024 Car Rental Service. All rights reserved.</p>
     </footer>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="../src/index.ts"></script>
-    <script type="module" src="../src/dashboard/customer.ts"></script>
+    <script type="module" src="../src/scripts/js/index.js"></script>
+    <script type="module" src="../src/scripts/js/dashboard/customer.js"></script>
 </body>
+
 </html>

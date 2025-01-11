@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link href="./css/styles.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <!-- <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"> -->
+  <link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
 <body class="bg-bg">
@@ -16,7 +16,7 @@
         <div class="card border-1 p-4 my-4 ">
           <div class="card-body">
             <!-- Back home button -->
-            <a href="index.html" class="btn btn-link position-absolute top-0 start-0 mt-2 ms-1">
+            <a href="../index.html" class="btn btn-link position-absolute top-0 start-0 mt-2 ms-1">
               <i class="bi bi-arrow-left fs-3 p-3"></i>
             </a>
             <!-- icon and header -->
@@ -52,7 +52,7 @@
                 <div class="mb-2">
                   <button type="submit" class="btn btn-primary w-100">Login</button>
                 </div>
-                <a href="register.html" class="d-block p-1">Create an Account</a>
+                <a href="./register.html" class="d-block p-1">Create an Account</a>
               </form>
             </div>
           </div>
@@ -68,7 +68,7 @@
       new bootstrap.Tooltip(t)
     })
   </script>
-  <script type="module" src="../src/auth/login.ts"></script>
+  <script type="module" src="../src/scripts/js/auth/login.js"></script>
 </body>
 
 </html>
